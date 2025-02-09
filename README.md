@@ -100,12 +100,12 @@ cv::Point2f dst_points[] = {
             cv::Point2f(639,  359),//B
             cv::Point2f(0,  70),//C'
             cv::Point2f(639, 70) };//D'
-Mat _transform;
+Mat g_transform;
 ...
 //计算放缩比例
-_transform = cv::getPerspectiveTransform(src_points, dst_points);
+g_transform = cv::getPerspectiveTransform(src_points, dst_points);
 //根据比例，计算目标坐标用于计算距离和速度
-cv::perspectiveTransform(points, transformed_points, _transform);
+cv::perspectiveTransform(points, transformed_points, g_transform);
 ```
 ![标定2](images/标定2.png)
 
