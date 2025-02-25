@@ -110,3 +110,8 @@ cv::perspectiveTransform(points, transformed_points, g_transform);
 ![标定2](images/标定2.png)
 
 
+## 记录一下后面要做的事情
+研究一下模型的拓展，如何让模型有空间感知，能够根据驾驶的需求，
+设计驾驶的路线，实现车辆的控制。
+
+

@@ -1,8 +1,4 @@
-/*!
-    @Description : https://github.com/shaoshengsong/
-    @Author      : shaoshengsong
-    @Date        : 2022-09-21 05:49:06
-*/
+
 #pragma once
 
 
@@ -15,8 +11,6 @@
 
 const int k_feature_dim=512;//feature dim
 
-const std::string  k_feature_model_path ="D:/doorw_source/yolo8/ultralytics/feature.onnx";
-const std::string  k_detect_model_path ="D:/doorw_source/yolo8/ultralytics/yolov5s.onnx";
 
 
 typedef Eigen::Matrix<float, 1, 4, Eigen::RowMajor> DETECTBOX;
