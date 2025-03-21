@@ -6,7 +6,6 @@
 特征提取可以自己训练，导出onnx使用，onnxruntime cpu 推理，方便使用.
 特征支持自定义维度例如 128,256,512等
 
-
 #### 操作系统：Ubuntu 18.04
 #### YOLV ：https://github.com/ultralytics/yolov8
 #### 硬件：NVIDIA GeForce RTX 4060 Ti 8G
@@ -26,19 +25,16 @@ coco.yaml
 选择打开视频文件或者视频流等
 
 ```c
-cv::VideoCapture capture("./1.mp4");
+cv::VideoCapture capture("./1.mp4");//打开本地视频文件
+cv::VideoCapture capture(0);//打开摄像头
 ```
 
-### 扩展方式
-1 整体分为两部分，新增检测模块放置detector文件夹，新增跟踪模块放置tracker文件夹
-
-## deepsort v1.0
-### MOT using deepsort yolo3 with C++
-操作系统：Windows11
-编译环境：Cmake  3.30.0-rc4
-硬件：INVIDIA Geforce RTC 3060
-CUDA:12.6
-Opencv:4.10.0
+#### 操作系统：Windows11
+#### 编译环境：Cmake  3.30.0-rc4
+#### 编译工具：Visual Studio 2019
+#### 硬件：INVIDIA Geforce RTC 3060
+#### CUDA:12.6
+#### Opencv:4.10.0
 深度学习的模型分两块，一个是目标检测，另一个是目标跟踪
 #### 目标检测的模型
 地址：Yolov8 https://github.com/ultralytics/ultralytics
@@ -56,11 +52,8 @@ DeepSORT算法的主要步骤
 
 匈牙利算法：用于计算检测框和预测框之间的最优匹配。
 
-级联匹配：DeepSORT中的级联匹配是一种特殊的机制，它首先尝试将检测结果与高置信度的轨迹进行匹配，然后再与低置信度的轨迹进行匹配。这有助于提高匹配的准确性，尤其是在目标被遮挡或短暂消失时。
 
-轨迹管理：DeepSORT维护每个目标的轨迹，并对新检测到的目标初始化新的轨迹。它还设置了确认状态（confirmed）和未确认状态（unconfirmed），以处理遮挡和临时丢失的情况。
-
-### 物体速度计算
+### 物体距离速度计算
 道路上的两条平行分界线上的四个点
 //坐标转换
 ```C++
@@ -84,8 +77,5 @@ cv::perspectiveTransform(points, transformed_points, g_transform);
 ![标定2](images/标定2.png)
 
 
-## 记录一下后面要做的事情
-研究一下模型的拓展，如何让模型有空间感知，能够根据驾驶的需求，
-设计驾驶的路线，实现车辆的控制。
 
 
