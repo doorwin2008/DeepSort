@@ -7,46 +7,20 @@
 特征支持自定义维度例如 128,256,512等
 
 
-操作系统：Ubuntu 18.04
-### 版本更新说明
-
-
-
-
-### 依赖的库
-opencv，可以下载opencv-4.6编译安装
-Eigen3安装
-
-```c
-sudo apt-get install libeigen3-dev
-```
-
-onnxruntime，可以直接解压使用，无需编译
-目标检测模型下载地址
-
-```c
-https://github.com/ultralytics/yolov5
-```
-
-
-
-### 使用方法
-#### 1 onnxruntime
-设置自己的onnxruntime的解压目录
-
-```
-set(ONNXRUNTIME_DIR "/home/a/lib/onnxruntime-linux-x64-1.12.1")
-```
+#### 操作系统：Ubuntu 18.04
+#### YOLV ：https://github.com/ultralytics/yolov8
+#### 硬件：NVIDIA GeForce RTX 4060 Ti 8G
+#### CUDA 12.6
+#### CUDNN 9.6
+#### onnxruntime 1.12.1
 
 
 #### 2 模型配置
-以下三项根据自己的需要更改
-文件`tracker/deepsort/include/dataType.h`
-```c
-const int k_feature_dim=512;//feature dim
-const std::string  k_feature_model_path ="./feature.onnx";
-const std::string  k_detect_model_path ="./yolov5s.onnx";
-```
+
+yolov8n.onnx 
+
+coco_80_labels_list.txt
+coco.yaml
 
 #### 3 主函数
 选择打开视频文件或者视频流等
